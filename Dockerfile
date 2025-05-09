@@ -6,3 +6,6 @@ COPY . /var/www/html/
 
 # Enable Apache rewrite module (optional)
 RUN a2enmod rewrite
+
+# Ensure index.php is recognized as the default index file
+RUN echo "DirectoryIndex index.php" >> /etc/apache2/apache2.conf
