@@ -4,6 +4,9 @@ FROM php:8.2-apache
 # Copy project files to the web root
 COPY . /var/www/html/
 
+# Change the DocumentRoot to point to the "Group BeatSphere" folder
+RUN echo "DocumentRoot /var/www/html/Group\ BeatSphere" >> /etc/apache2/sites-available/000-default.conf
+
 # Ensure index.php is recognized as the default index file
 RUN echo "DirectoryIndex index.php" >> /etc/apache2/apache2.conf
 
