@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.coldplay-theme {
+    background-color: #1e1e1e;
+    color: #fff;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #1f5f84;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    flex: 1;
+}
+
+.navbar .back-button {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: auto;
+}
+
+.navbar .back-button:hover {
+    color: #f0f0f0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    flex: 1;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #f7b731;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+    justify-items: center;
+}
+
+.video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 80%;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+video {
+    width: 100%;
+    border: 3px solid #f7b731;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.video-item h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f7b731;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-item {
+        width: 100%;
+    }
+}
