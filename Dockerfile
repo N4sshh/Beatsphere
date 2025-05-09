@@ -4,8 +4,11 @@ FROM php:8.2-apache
 # Copy project files to the web root
 COPY . /var/www/html/
 
+# Ensure index.php is recognized as the default index file
+RUN echo "DirectoryIndex index.php" >> /etc/apache2/apache2.conf
+
 # Enable Apache rewrite module (optional)
 RUN a2enmod rewrite
 
-# Ensure index.php is recognized as the default index file
-RUN echo "DirectoryIndex index.php" >> /etc/apache2/apache2.conf
+# Set correct permissions on the web root
+RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
